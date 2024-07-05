@@ -1,0 +1,3596 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap'); @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap'); @import url('https://fonts.googleapis.com/css2?family=Buenard&display=swap'); @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap'); @import url('https://fonts.googleapis.com/css2?family=Arbutus+Slab&display=swap');
+
+body {
+    background-color: #F2ECEC;
+    font-family: "Inter", sans-serif;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Scroll Section Styles */
+.scroll {
+    text-align: center;
+}
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #0086D1;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+#myBtn:hover {
+    background-color: #555;
+}
+
+/* ==========================
+1. Header and navigation
+============================*/
+
+/* Navbar Brand */
+.navbar-nav {
+    margin: 0; 
+    padding: 0; 
+    list-style: none; 
+    display: flex; 
+}
+
+.navbar-brand {
+    display: flex; 
+    align-items: center; 
+}
+
+.navbar-brand img {
+    width: 52px;
+    height: 52px; 
+    margin-right: 8px;
+}
+
+.navbar-brand a {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    color: #000000;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 39px;
+    text-decoration: none; 
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus, .btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+/* Navigation Link */
+.nav-link {
+    color: #666777;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #000000;
+}
+
+/* Search Form Styling */
+.form-control {
+    width: 200px; 
+    border-radius: 20px; 
+}
+
+.btn-outline-success {
+    border-color: #28a745; 
+    color: #28a745; 
+    border-radius: 20px; 
+}
+
+.btn-outline-success:hover {
+    background-color: #28a745; 
+    color: #000000; 
+}
+
+/* Login Button */
+.login-button {
+    background-color: #EAFFEA;
+    color: #000000;
+    font-size: 14px;
+    padding: 0.5px 15px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #28a745;
+}
+
+/* Akun Button */
+.akun-button {
+    background-color: #EAFFEA;
+    color: #000000;
+    font-size: 14px;
+    padding: 0.5px 15px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.akun-button:hover {
+    background-color: #28a745;
+}
+
+/* dropdown-menu */
+.login-button .dropdown-menu {
+    background-color: #ffffff;
+    margin-left: 2px; 
+    margin-top: 5px;
+}
+
+.dropdown-menu .dropdown-item {
+    color: #000000; 
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #37ad52; 
+    border-radius: 5px;
+}
+
+/* dropdown-menu */
+.akun-button .dropdown-menu {
+    background-color: #ffffff; 
+    margin-right: 18px;
+    margin-top: 5px;
+}
+
+.akun-button .dropdown-menu .dropdown-item {
+    color: #000000; 
+}
+
+.akun-button .dropdown-menu .dropdown-item:hover {
+    background-color: #37ad52; 
+    border-radius: 5px;
+}
+
+/* Shope button */
+.shope-button {
+    background-color: #EAFFEA;
+    color: #000000;
+    width: 50px;
+    height: 45px;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.shope-button:hover {
+    background-color: #28a745;
+}
+
+.fa-shopping-cart {
+    text-align: center;
+}
+
+#cart-count {
+    background-color: #ea0909; /* Warna latar belakang hitungan item */
+    color: white; /* Warna teks hitungan item */
+    border-radius: 50%; /* Membuat hitungan item menjadi bulat */
+    padding: 2px 8px;
+    font-size: 12px; /* Ukuran teks hitungan item */
+    position: absolute;
+    top: -10px; /* Posisi hitungan item */
+    right: -10px; /* Posisi hitungan item */
+    display: none; /* Awalnya disembunyikan */
+}
+
+/* Navigation Link Underline */
+@media (min-width: 991.5px) {
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: #BF1010;
+        visibility: hidden;
+        transition: width 0.3s ease-in-out, visibility 0.3s;
+    }
+    
+    .nav-link.active::before {
+        visibility: visible;
+        width: 100%;
+        height: 3px;
+    }
+}
+
+/* ==========================
+2. Footbar
+============================*/
+
+/* Style for footer */
+.footer {
+    background-color: #BF1010;
+    color: #FFFFFF;
+    width: auto;
+    height: 520px;
+    padding: 50px 0;
+}
+
+.footer .container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* Style for moto */
+.moto {
+    position: relative;
+    width: 380px;
+    height: 424px;
+    overflow: hidden;
+}
+
+.footer-brand {
+    display: flex; 
+    align-items: center; 
+}
+
+.footer-brand img {
+    width: 64px;
+    height: 64px; 
+    margin-right: 10px;
+}
+
+.footer-brand a {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    color: #FFFFFF;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 39px;
+    text-decoration: none; 
+}
+
+.kolom1 p {
+    width: auto;
+    height: 70px;
+    padding-top: 5px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 39px;
+}
+
+.kolom2 p {
+    width: auto;
+    height: 45px;
+    padding-top: 10px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 13.8px;
+    letter-spacing: 0;
+    line-height: 25px;
+}
+
+.moto h6 {
+    position: absolute;
+    width: 82px;
+    height: 22px;
+    top: 310px;
+    left: 10px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 16.5px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 22px;
+    white-space: nowrap;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.social-icons ul {
+    display: flex;
+    list-style: none;
+    position: absolute;
+    width: 82px;
+    height: 22px;
+    top: 305px;
+    left: 80px;
+}
+
+.social-icons ul li {
+    margin-right: 20px;
+}
+
+.social-icons ul li:last-child {
+    margin-right: 0; 
+}
+
+.social-icons li a i {
+    font-size: 30px;
+    color: #ffffff; 
+}
+
+
+/* Style for tools */
+.tools {
+    position: relative;
+    width: 380px;
+    height: auto; 
+    overflow: hidden;
+}
+
+.tools h5 {
+    position: absolute;
+    top: 13.5px;
+    left: 153px;
+    width: auto; 
+    height: 42px;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 39px; 
+    white-space: nowrap;
+    margin: 0; 
+}
+
+.tools .fitur ul {
+    position: absolute;
+    top: 67px; 
+    left: 153px;
+    list-style: none; 
+    padding: 0; 
+}
+
+.tools .fitur ul li {
+    letter-spacing: 0;
+    line-height: 40px; 
+    white-space: nowrap;
+    margin: 0; 
+}
+
+.tools .fitur ul li a {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none; 
+}
+
+.tools .fitur ul li a:hover {
+    color: #000000;
+}
+
+/* Style for address */
+.address {
+    position: relative;
+    width: 380px;
+    height: 404px;
+    overflow: hidden;
+}
+
+.address h5 {
+    position: absolute;
+    width: auto;
+    height: 42px;
+    top: 12px;
+    left: 16px;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 39px;
+    white-space: nowrap;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.fa-location-dot {
+    font-size: 23px; 
+    margin: 75px 13px;
+}
+
+.fa-phone {
+    font-size: 23px; 
+    margin: -57px 10px;
+}
+
+.fa-envelope {
+    font-size: 23px; 
+    margin: 74px 10px;
+}
+
+.fa-clock {
+    font-size: 23px; 
+    margin: -57.5px 10px;
+}
+
+.info .text-1 {
+    position: absolute;
+    width: 324px;
+    height: 56px;
+    top: 67px;
+    left: 56px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 16.3px;
+    letter-spacing: 0;
+    line-height: 39px;
+}
+
+.info .text-2 {
+    position: absolute;
+    width: 169px;
+    height: 56px;
+    top: 107px;
+    left: 56px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 16.5px;
+    letter-spacing: 0;
+    line-height: 39px;
+}
+
+.info .text-3 {
+    position: absolute;
+    width: 252px;
+    height: 56px;
+    top: 147px;
+    left: 56px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 16.5px;
+    letter-spacing: 0;
+    line-height: 39px;
+}
+
+.info .text-4 {
+    position: absolute;
+    width: 324px;
+    height: 70px;
+    top: 187px;
+    left: 56px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 14.8px;
+    letter-spacing: 0;
+    line-height: 39px;
+}
+
+.address .info a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.address .info a:hover {
+    color: #000000
+}
+
+/* Style for copyright */
+.line {
+    margin-bottom: 65px; 
+    margin-top: -65px; 
+}
+
+.copyright {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: -20px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    color: transparent;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 22px; 
+}
+
+.copyright p {
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.copyright span {
+    color: #C6C6C6;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* ==========================
+3. Home
+============================*/
+
+/* Style for hero section */
+.hero {
+    position: relative;
+    width: auto;
+    height: 452px; 
+    margin: 8px;
+    border-radius: 25px;
+    background-size: cover;
+    background-position: center;
+}
+  
+  /* Style for background image */
+.bg-image {
+    background-image: url('/img/banner.png');
+}
+  
+  /* Style for hero inner content */
+.hero-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff; 
+}
+  
+  /* Style for banner text */
+.banner-text {
+   padding-bottom: 50px; 
+}
+  
+  /* Style for logo */
+.banner-text img {
+    width: 100px; 
+    height: auto;
+    margin-bottom: 20px; 
+}
+  
+  /* Style for heading */
+.banner-text h1 {
+    font-family: 'Arbutus Slab', serif;
+    font-size: 29px; 
+    margin-bottom: 2px; 
+}
+  
+  /* Style for paragraph */
+.banner-text p {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 15px; 
+    margin-top: 20px;
+}  
+
+/* About Section Styles */
+.about-home {
+    height: 520px;
+    margin: 8px;
+    margin-bottom: -8px;
+    background-color: #FFFFFF;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.about-home-content {
+    display: flex; 
+    align-items: center; 
+}
+
+.about-home-content img {
+    max-width: 100%;
+    text-align: center;
+    margin-right: 30px;
+}
+
+.about-home-content p {
+    font-family: "Buenard", serif;
+    font-weight: 400;
+    color: #000000;
+    font-size: 20px;
+    text-align: justify;
+    letter-spacing: -0.5px;
+    line-height: 30px;
+    margin-left: 60px;
+    margin-top: 20px;
+}
+
+.food-menu {
+    margin: 8px;
+    margin-top: -8px;
+    background-color: #FFFFFF;
+}
+
+.food-menu h1 {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    color: #1c1d1d;
+    font-size: 35px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+}
+
+.food-menu p {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    color: #494a4a;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 44px;
+}
+
+.food-menu .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.food-menu .col-md-4 {
+    flex: 0 0 24%;
+    max-width: 24%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+.food-menu .card {
+    background-color: #fff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.food-menu .card:hover {
+    transform: translateY(-10px);
+}
+
+.food-menu img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 230px;
+    height: 230px;
+}
+
+.food-menu .card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.food-menu .card-title {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    color: #000000;
+    font-size: 16px;
+    letter-spacing: 0;
+    margin-top: 10px;
+    line-height: 35px;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.food-menu .card-number {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    color: #666;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 30px;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.food-menu .btn-primary {
+    background-color: #EAFFEA;
+    border: none;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    color: #0085d1;
+    padding: 7px 90px;
+    font-size: 15px;
+    border-radius: 99px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.food-menu .btn-primary:hover {
+    background-color: #0056b3;
+    color: #FFFFFF;
+}
+
+.food-menu .button-4 {
+    background-color: #eaffea;
+    border-radius: 99px;
+    padding: 10px 50px; /* Adjusted padding for a smaller button */
+    text-align: center;
+    box-sizing: border-box;
+    display: inline-block; /* Changed to inline-block for better centering */
+    margin: 0 auto; /* Center horizontally */
+    text-decoration: none;
+}
+
+.food-menu .text-wrapper-8 {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    color: #01d001;
+    font-size: 15px; /* Adjusted font-size for a smaller button */
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 22px;
+    white-space: nowrap;
+}
+
+/* Additional styling to ensure the button is centered */
+.food-menu .div-mx-auto {
+    text-align: center; /* Ensure the parent container centers its children */
+    margin-bottom: 30px;
+}
+
+.food-menu .button-4:hover {
+    background-color: #01d001;
+}
+
+.food-menu .text-wrapper-8:hover {
+    color: #FFFFFF;
+}
+
+/* ==========================
+4. Menu
+============================*/
+
+/* General styling for the product section */
+.product {
+    position: relative;
+    width: 100%; /* Adjust width to be responsive */
+    max-width: 1349px; /* Keep the max width */
+    min-height: 810px; /* Adjust to fit content */
+    background-color: #F2ECEC;
+    margin-top: 2px;
+}
+
+.product .card-heading {
+    position: relative; /* Changed to relative */
+    width: 100%;
+    max-width: 1349px;
+    height: 50px;
+    background-color: #ffffff;
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.product h2 {
+    margin: 0 110px; /* Remove side margins */
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    color: #000000;
+    font-size: 20px;
+    text-align: center; /* Center align text */
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+}
+
+/* Styling for the row */
+.product .row {
+    width: 1360px;
+    margin-top: 2px; /* Remove default margin */
+    background-color: #FFFFFF;
+}
+
+/* Styling for individual columns */
+.product .col-md-4 {
+    position: relative;
+    width: 425px; /* Adjust width to make sure 3 columns fit in one row */
+    margin: 1%; /* Add margin to create space between columns */
+    padding: 15px;
+    box-sizing: border-box; /* Ensure padding and margin don't affect width */
+}
+
+.product .col-md-4:hover {
+    transform: scale(1.05); /* Mengubah skala elemen ketika dihover */
+    transition: transform 0.3s ease; /* Animasi transisi untuk efek hover */
+}
+
+/* Styling for the card */
+.product .card {
+    position: relative; /* Changed to relative */
+    width: 400px;
+    height: 195px;
+    border: 1px solid #ddd; /* Add a border for better visibility */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden;
+    background-color: #fff; /* Background color for card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add some shadow for better look */
+    padding: 15px; /* Add padding for card content */
+}
+
+/* Styling for the card image */
+.product img {
+    width: 100px; /* Set fixed width for image */
+    height: 100px; /* Set fixed height for image */
+    border-radius: 9px;
+    background-position: 50% 50%;
+    margin-top: -140px;
+    margin-left: 245px;
+}
+
+/* Styling for the card body */
+.product .card-body {
+    width: 260px;
+    height: 117px;
+    text-align: left; 
+}
+
+/* Styling for the card title */
+.product .card-title {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    color: #000000;
+    font-size: 14px;
+    margin-bottom: 10px; /* Margin for spacing */
+}
+
+/* Styling for the card text */
+.product .card-text {
+    height: 40px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    color: #727272;
+    font-size: 12px;
+    margin-bottom: 10px; /* Margin for spacing */
+}
+
+/* Styling for the card number (price) */
+.product .card-number {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    color: #000000;
+    font-size: 12px;
+    margin-bottom: 10px; /* Margin for spacing */
+}
+
+.product .card-stock {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    color: #727272;
+    font-size: 12px;
+    margin-top: -25px;
+}
+
+/* Styling for the form button */
+.product .btn-primary {
+    padding: 5px 25px; /* Padding for the button */
+    background-color: #eaffea;
+    border-radius: 99px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    color: #0085d1;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    display: block;
+    margin-top: -15px;
+    margin-left: 245px;
+}
+
+/* ==========================
+5. About
+============================*/
+
+/* About Section Styles */
+.about {
+    height: 620px;
+    margin: 2px;
+    margin-bottom: -8px;
+    background-color: #FFFFFF;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.about-content {
+    display: flex; 
+    align-items: center; 
+}
+
+.about-content img {
+    max-width: 100%;
+    text-align: center;
+    margin-right: 30px;
+}
+
+.about-content p {
+    font-family: "Buenard", serif;
+    font-weight: 400;
+    color: #000000;
+    font-size: 20px;
+    text-align: justify;
+    letter-spacing: -0.5px;
+    line-height: 30px;
+    margin-left: 60px;
+    margin-top: 20px;
+}
+
+/* Slogan Section Styles */
+.slogan {
+    height: 620px;
+    margin: 2px;
+    background-color: #1b2f52;
+    display: flex; 
+    position: relative;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: flex-start;
+}
+
+.row-1 {
+    position: absolute;
+    width: 387px;
+    height: 283px;
+    top: 110px;
+    left: 70px;
+    transform: translate(0, 50px); 
+}
+
+.row-1 .line1 {
+    position: absolute;
+    width: 15px;
+    height: 105px;
+    top: 3px;
+    left: 3px;
+}
+
+.row-1 .line2 {
+    position: absolute;
+    width: 3px;
+    height: 153px;
+    top: 127px;
+    left: 9px;
+}
+
+.row-1 h1 {
+    position: absolute;
+    width: 205px;
+    height: 90px;
+    top: 10px;
+    left: 31px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 40px;
+    text-align: justify;
+    letter-spacing: 0;
+    line-height: 45px;
+}
+
+.row-1 p {
+    position: absolute;
+    width: 351px;
+    height: 107px;
+    top: 149px;
+    left: 33px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 17px;
+    text-align: justify;
+    letter-spacing: 0;
+    line-height: 25px;
+}
+
+.row-2 {
+    position: absolute;
+    width: 387px;
+    height: 283px;
+    top: 110px;
+    left: 466px;
+    transform: translate(0, 50px);
+}
+
+.row-2 .line1 {
+    position: absolute;
+    width: 15px;
+    height: 105px;
+    top: 3px;
+    left: 3px;
+}
+
+.row-2 .line2 {
+    position: absolute;
+    width: 3px;
+    height: 153px;
+    top: 127px;
+    left: 9px;
+}
+
+.row-2 h1 {
+    position: absolute;
+    width: 223px;
+    height: 90px;
+    top: 10px;
+    left: 31px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 40px;
+    letter-spacing: 0;
+    line-height: 45px;
+}
+
+.row-2 p {
+    position: absolute;
+    width: 353px;
+    height: 129px;
+    top: 150px;
+    left: 33px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 17px;
+    text-align: justify;
+    letter-spacing: 0;
+    line-height: 25px;
+}
+
+.row-3 {
+    position: absolute;
+    width: 387px;
+    height: 283px;
+    top: 110px;
+    left: 862px;
+    transform: translate(0, 50px);
+}
+
+.row-3 .line1 {
+    position: absolute;
+    width: 15px;
+    height: 105px;
+    top: 3px;
+    left: 3px;
+}
+
+.row-3 .line2 {
+    position: absolute;
+    width: 3px;
+    height: 153px;
+    top: 127px;
+    left: 9px;
+}
+
+.row-3 h1 {
+    position: absolute;
+    width: 266px;
+    height: 90px;
+    top: 15px;
+    left: 31px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 40px;
+    letter-spacing: 0;
+    line-height: 45px;
+}
+
+.row-3 p {
+    position: absolute;
+    width: 353px;
+    height: 129px;
+    top: 150px;
+    left: 32px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: justify;
+    letter-spacing: 0;
+    line-height: 25px;
+}
+
+.row-4 {
+    position: absolute;
+    width: 21px;
+    height: 283px;
+    top: 110px;
+    left: 1258px;
+    transform: translate(0, 50px);
+}
+
+.row-4 .line1 {
+    position: absolute;
+    width: 15px;
+    height: 105px;
+    top: 3px;
+    left: 3px;
+}
+
+.row-4 .line2 {
+    position: absolute;
+    width: 3px;
+    height: 153px;
+    top: 127px;
+    left: 9px;
+}
+
+/* ==========================
+6. Contact Us
+============================*/
+
+/* Contact Section Styles */
+.contact {
+    position: relative;
+    width: auto;
+    height: 1035px;
+    background-color: #ffffff;
+    margin: 2px;
+}
+
+.contact .card-body {
+    width: 100%;
+    padding: 20px;
+}
+
+.contact .form-group1 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.contact .form-group1 label {
+    position: absolute;
+    width: 90px;
+    height: 29px;
+    top: 50px;
+    left: 140px;
+    font-family: "Mulish", sans-serif;
+    font-weight: 600;
+    color: #000000;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 39px;
+    white-space: nowrap;
+}
+
+.contact .form-group1 .col-md-6{
+    position: absolute;
+    top: 100px;
+    left: 135px;
+}
+
+.contact .form-group1 input {
+    display: block;
+    width: 370px;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    color: #494a4a;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.contact .form-group1 input:focus {
+    outline: 0;
+    border-color: #20B2AA;
+    box-shadow: 0 0 0 .3rem #c2dbfe;
+}
+
+.contact .form-group1 .invalid-feedback {
+    display: block;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #D3EEDA;
+}
+
+.contact .form-group2 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.contact .form-group2 label {
+    position: absolute;
+    width: 90px;
+    height: 29px;
+    top: 140px;
+    left: 140px;
+    font-family: "Mulish", sans-serif;
+    font-weight: 600;
+    color: #000000;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 39px;
+    white-space: nowrap;
+}
+
+.contact .form-group2 .col-md-6{
+    position: absolute;
+    top: 190px;
+    left: 135px;
+}
+
+.contact .form-group2 input {
+    display: block;
+    width: 370px;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    color: #494a4a;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.contact .form-group2 input:focus {
+    outline: 0;
+    border-color: #20B2AA;
+    box-shadow: 0 0 0 .3rem #c2dbfe;
+}
+
+.contact .form-group2 .invalid-feedback {
+    display: block;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #D3EEDA;
+}
+
+.contact .form-group3 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.contact .form-group3 label {
+    position: absolute;
+    width: 90px;
+    height: 29px;
+    top: 230px;
+    left: 110px;
+    font-family: "Mulish", sans-serif;
+    font-weight: 600;
+    color: #000000;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 39px;
+    white-space: nowrap;
+}
+
+.contact .form-group3 .col-md-6{
+    position: absolute;
+    top: 280px;
+    left: 135px;
+}
+
+.contact .form-group3 input {
+    display: block;
+    width: 370px;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    color: #494a4a;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.contact .form-group3 input:focus {
+    outline: 0;
+    border-color: #20B2AA;
+    box-shadow: 0 0 0 .3rem #c2dbfe;
+}
+
+.contact .form-group3 .invalid-feedback {
+    display: block;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #D3EEDA;
+}
+
+.contact .form-group4 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.contact .form-group4 label {
+    position: absolute;
+    width: 90px;
+    height: 29px;
+    top: 50px;
+    left: 530px;
+    font-family: "Mulish", sans-serif;
+    font-weight: 600;
+    color: #000000;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 39px;
+    white-space: nowrap;
+}
+
+.contact .form-group4 .col-md-6{
+    position: absolute;
+    top: 100px;
+    left: 565px;
+}
+
+.contact .form-group4 textarea {
+    display: block;
+    width: 98.5%;
+    height: 125px;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    color: #494a4a;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+  
+ .contact .form-group4 textarea:focus {
+    outline: 0;
+    border-color: #20B2AA;
+    box-shadow: 0 0 0 .3rem #c2dbfe;
+  }
+  
+.contact .form-group4 .invalid-feedback {
+    display: block;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #D3EEDA;
+}
+
+.contact .form-group5 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.contact .col-md-6 button{
+    position: absolute;
+    width: 200px;
+    height: 35px;
+    top: 245px;
+    left: 575px;
+    background-color: #bf1010;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Style for the login button */
+.contact .btn-primary {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0;
+    white-space: nowrap;
+}
+
+/* Hover effect for login button */
+.contact .btn-primary:hover {
+    background-color: #bf1010;
+}
+
+.contact .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); 
+}
+
+.contact .btn-primary:active {
+    background-color: #0056b3; 
+    border-color: #004c9e;
+}
+
+.contact .btn-primary.disabled, .btn-primary:disabled {
+    background-color: #007bff; 
+    border-color: #007bff; 
+}
+
+.contact .btn-primary:not(:disabled):not(.disabled):active:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); 
+}
+
+.contact .form-control.is-invalid + .invalid-feedback {
+    display: block;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 140px;
+    margin-top: 300px;
+    border: 1px solid;
+    border-color: #727272;
+}
+
+.contact-info-item {
+    flex-basis: 25%;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.contact-info-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.contact-info-text {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.contact-map {
+    width: 100%;
+    height: 400px;
+    margin-top: 50px;
+}
+
+/* ==========================
+7. Login
+============================*/
+
+.log-in .frame-1 {
+    position: absolute;
+    width: 832px;
+    height: 453px;
+    top: 22px;
+    left: 0;
+    right: 23.5px;
+    bottom: 0;
+    margin: auto;
+    background-color: #000000;
+    border-radius: 21px;
+}
+  
+.log-in .frame-2 {
+    position: absolute;
+    width: 832px;
+    height: 453px;
+    top: 0;
+    left: 23.5px;
+    right: 0;
+    bottom: 45.5px;
+    margin: auto;
+    background-color: #bf1010;
+    border-radius: 21px;
+}
+
+.log-in .card {
+    position: absolute;
+    width: 808px;
+    height: 429px;
+    top: 25px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid;
+    border-color: #727272;
+    box-shadow: 0px 4px 4px #00000040;
+}
+
+.log-in .overlap-group {
+    position: absolute;
+    width: 312px;
+    height: 105px;
+    top: 8px;
+    left: 72px;
+  }
+
+.log-in h1{
+    position: absolute;
+    width: 310px;
+    height: 48px;
+    top: 13px;
+    left: 0;
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    color: #000000;
+    font-size: 35px;
+    letter-spacing: 0;
+    line-height: 39px;
+  }
+
+.log-in .overlap-group img {
+    position: absolute;
+    width: 311px;
+    height: 5px;
+    top: 65px;
+    left: 1px;
+}
+
+.log-in .card-text {
+    position: absolute;
+    width: 312px;
+    height: 28px;
+    top: 74px;
+    left: 0;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 39px;
+    white-space: nowrap;
+}
+
+.log-in .card-body {
+    position: absolute;
+    width: 399px;
+    height: 387px;
+    top: 2;
+    left: 31px;
+}
+
+.log-in .form-group1 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.log-in .form-group1 .col-md-4 {
+    position: absolute;
+    width: 90px;
+    height: 29px;
+    top: 141px;
+    left: 31px;
+    font-family: "Mulish", sans-serif;
+    font-weight: 600;
+    color: #000000;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 39px;
+    white-space: nowrap;
+}
+
+.log-in .form-group1 .col-md-6 {
+    position: absolute;
+    width: 308px;
+    height: 30px;
+    top: 187px;
+    left: 29px;
+}
+
+.log-in .form-group1 .col-md-6 span {
+    position: absolute;
+    width: 14px;
+    height: 17px;
+    top: 10px;
+    left: 25px;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.log-in .form-group1 input {
+    display: block;
+    width: 316px;
+    padding: .375rem .75rem;
+    padding-left: 35px;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #494a4a;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.log-in .form-group1 input:focus {
+    outline: 0;
+    border-color: #20B2AA;
+    box-shadow: 0 0 0 .3rem #c2dbfe;
+}
+
+
+.log-in .form-group1 .invalid-feedback {
+    display: block;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #D3EEDA;
+}
+
+.log-in .form-group2 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.log-in .form-group2 .col-md-4 {
+    position: absolute;
+    width: 83px;
+    height: 29px;
+    top: 217px;
+    left: 30px;
+    font-family: "Mulish", sans-serif;
+    font-weight: 600;
+    color: #000000;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 39px;
+    white-space: nowrap;
+}
+
+.log-in .form-group2 .col-md-6 {
+    position: absolute;
+    width: 308px;
+    height: 30px;
+    top: 263px;
+    left: 29px;
+}
+
+.log-in .form-group2 .col-md-6 span {
+    position: absolute;
+    width: 14px;
+    height: 17px;
+    top: 10px;
+    left: 25px;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.log-in .form-group2 input {
+    display: block;
+    width: 316px;
+    padding: .375rem .75rem;
+    padding-left: 35px;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #494a4a;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.log-in .form-group2 input:focus {
+    outline: 0;
+    border-color: #20B2AA;
+    box-shadow: 0 0 0 .3rem #c2dbfe;
+}
+
+.log-in .form-group2 i {
+    position: absolute;
+    width: 200px;
+    height: 29px;
+    top: 6px;
+    left: 300px;
+    color: #494a4a;
+    padding: 5px 0;
+    transition: border-bottom-color 0.3s;
+}
+
+.log-in .form-group2 .invalid-feedback {
+    display: block;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #D3EEDA;
+}
+
+/* Style for form group 3 */
+.log-in .form-group3 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+/* Style for col md 6 */
+.log-in .form-group3 .col-md-6 {
+    position: absolute;
+    width: 308px;
+    height: 30px;
+    top: 304px;
+    right: 61px;
+}
+
+/* Style for checkbox container */
+.log-in .form-check {
+    display: flex;
+    align-items: center;
+}
+
+/* Style for the checkbox input */
+.log-in .form-check-input {
+    margin-right: 5px; 
+    margin-top: 0;
+    border-color: #333;
+}
+
+/* Style for the checkbox when checked */
+.log-in .form-check-input:checked {
+    background-color: #007bff; 
+    border-color: #007bff; 
+}
+
+/* Style for label text when checkbox is checked */
+.log-in .form-check-input:checked + .form-check-label {
+    color: #000000; 
+    font-weight: 600; 
+}
+
+/* Hover effect for checkbox */
+.log-in .form-check-input:hover {
+    cursor: pointer; 
+}
+
+/* Style for the label text */
+.log-in .form-check-label {
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    color: transparent;
+    text-align: center;
+    letter-spacing: 0;
+    white-space: nowrap;
+    font-size: 12px;
+    color: #333; 
+}
+
+/* Hover effect for label text */
+.log-in .form-check-label:hover {
+    color: #0056b3; 
+}
+
+.log-in .form-check .col-md-8{
+    position: absolute;
+    width: 140px;
+    height: 27px;
+    top: 2px;
+    left: 45px;
+    color: transparent;
+    text-align: center;
+    letter-spacing: 0;
+    white-space: nowrap;
+    font-size: 12px;
+    color: #333; 
+}
+
+.log-in .col-md-8 p {
+    font-family: "Mulish", sans-serif;
+    font-weight: 500;
+}
+
+.log-in .col-md-8 a {
+    text-decoration: none;
+    font-family: "Mulish", sans-serif;
+    font-weight: 600;
+}
+
+/* Style for form group 4 */
+.log-in .form-group4 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.log-in .col-md-8 button{
+    position: absolute;
+    width: 316px;
+    height: 35px;
+    top: 332px;
+    left: 37px;
+    background-color: #bf1010;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Style for the login button */
+.log-in .btn-primary {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0;
+    white-space: nowrap;
+}
+
+/* Hover effect for login button */
+.log-in .btn-primary:hover {
+    background-color: #bf1010;
+}
+
+/* Style for the "Forgot Your Password?" link */
+.log-in .btn-link {
+    position: absolute;
+    width: 106px;
+    height: 30px;
+    top: 372px;
+    left: 160px; 
+    transform: translateX(-50%); 
+    font-family: "Mulish", sans-serif;
+    font-weight: 700;
+    color: #0085d1;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 30px; 
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.log-in .card-body img {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 63px;
+    left: 405px;
+    object-fit: cover;
+}
+
+/* ==========================
+8. Register
+============================*/
+
+/* CSS untuk form registrasi */
+.register {
+    margin-top: 50px;
+}
+
+.register .frame-1 {
+    position: absolute;
+    width: 959px;
+    height: 438px;
+    top: 22px;
+    left: 0;
+    right: 23.5px;
+    bottom: 0;
+    margin: auto;
+    background-color: #000000;
+    border-radius: 21px;
+}
+  
+.register .frame-2 {
+    position: absolute;
+    width: 959px;
+    height: 438px;
+    top: 0;
+    left: 23.5px;
+    right: 0;
+    bottom: 45.5px;
+    margin: auto;
+    background-color: #bf1010;
+    border-radius: 21px;
+}
+
+.register .card {
+    position: absolute;
+    width: 935px;
+    height: 413px;
+    top: 25px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid;
+    border-color: #727272;
+    box-shadow: 0px 4px 4px #00000040;
+}
+
+.register .overlap-group {
+    position: relative;
+    width: 312px;
+    height: 105px;
+    top: 8px;
+    left: 72px;
+}
+
+.register h1{
+    position: absolute;
+    width: 310px;
+    height: 48px;
+    top: 13px;
+    left: 0;
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    color: #000000;
+    font-size: 35px;
+    letter-spacing: 0;
+    line-height: 39px;
+}
+
+.register .overlap-group img {
+    position: absolute;
+    width: 311px;
+    height: 5px;
+    top: 65px;
+    left: 1px;
+}
+
+.register .card-text {
+    position: absolute;
+    width: 312px;
+    height: 28px;
+    top: 74px;
+    left: 0;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 39px;
+    white-space: nowrap;
+}
+
+.register .card-body {
+    position: absolute;
+    width: 399px;
+    height: 387px;
+    top: 2;
+    left: 31px;
+}
+
+.register .form-group1 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+/* Style untuk form input */
+.register .form-group1 .form-control {
+    position: absolute;
+    width: 200px;
+    height: 29px;
+    top: 141px;
+    left: 41px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    background-color: transparent;
+    padding: 5px 0;
+    transition: border-bottom-color 0.3s;
+}
+
+.register .form-group2 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+/* Style untuk form input */
+.register .form-group2 .form-control {
+    position: absolute;
+    width: 200px;
+    height: 29px;
+    top: 141px;
+    left: 283px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    background-color: transparent;
+    padding: 5px 0;
+    transition: border-bottom-color 0.3s;
+}
+
+.register .form-group3 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+/* Style untuk form input */
+.register .form-group3 .form-control {
+    position: absolute;
+    width: 442px;
+    height: 29px;
+    top: 191px;
+    left: 41px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    background-color: transparent;
+    padding: 5px 0;
+    transition: border-bottom-color 0.3s;
+}
+
+.register .form-group4 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+/* Style untuk form input */
+.register .form-group4 .form-control {
+    position: absolute;
+    width: 200px;
+    height: 29px;
+    top: 241px;
+    left: 41px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    background-color: transparent;
+    padding: 5px 0;
+    transition: border-bottom-color 0.3s;
+}
+
+.register .form-group4 i {
+    position: absolute;
+    width: 200px;
+    height: 29px;
+    top: 242px;
+    left: 225px;
+    color: #494a4a;
+    padding: 5px 0;
+    transition: border-bottom-color 0.3s;
+}
+
+.register .form-group5 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+/* Style untuk form input */
+.register .form-group5 .form-control {
+    position: absolute;
+    width: 200px;
+    height: 29px;
+    top: 241px;
+    left: 283px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    background-color: transparent;
+    padding: 5px 0;
+    transition: border-bottom-color 0.3s;
+}
+
+.register .form-group5 i {
+    position: absolute;
+    width: 200px;
+    height: 29px;
+    top: 242px;
+    left: 467px;
+    color: #494a4a;
+    padding: 5px 0;
+    transition: border-bottom-color 0.3s;
+}
+
+.register .form-group6 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+/* Style untuk form input */
+.register .form-group6 .form-control {
+    position: absolute;
+    width: 442px;
+    height: 29px;
+    top: 291px;
+    left: 41px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    background-color: transparent;
+    padding: 5px 0;
+    transition: border-bottom-color 0.3s;
+}
+
+/* Style for form group 4 */
+.register .form-group7 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.register .col-md-6 button{
+    position: absolute;
+    width: 442px;
+    height: 35px;
+    top: 332px;
+    left: 41px;
+    background-color: #bf1010;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Style for the register button */
+.register .btn-primary {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 20px;
+    letter-spacing: 0;
+    white-space: nowrap;
+}
+
+/* Hover effect for register button */
+.register .btn-primary:hover {
+    background-color: #bf1010;
+}
+
+.register .form-control:focus {
+    outline: none;
+    border-bottom-color: #007bff;
+}
+
+/* Style untuk pesan kesalahan */
+.register .invalid-feedback {
+    display: none;
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.register .form-control.is-invalid + .invalid-feedback {
+    display: block;
+}
+
+.register .card-body img {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 55.5px;
+    left: 535px;
+    object-fit: cover;
+}
+
+/* ==========================
+9. Forgot Password
+============================*/
+
+/* Center the forgot password form */
+.forgot .frame-1 {
+    position: absolute;
+    width: 649px;
+    height: 385px;
+    top: 22px;
+    left: 0;
+    right: 23.5px;
+    bottom: 0;
+    margin: auto;
+    background-color: #000000;
+    border-radius: 21px;
+}
+  
+.forgot .frame-2 {
+    position: absolute;
+    width: 649px;
+    height: 385px;
+    top: 0;
+    left: 23.5px;
+    right: 0;
+    bottom: 45.5px;
+    margin: auto;
+    background-color: #bf1010;
+    border-radius: 21px;
+}
+
+.forgot .card {
+    position: absolute;
+    width: 622px;
+    height: 360px;
+    top: 25px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid;
+    border-color: #727272;
+    box-shadow: 0px 4px 4px #00000040;
+}
+
+.forgot .overlap-group {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 312px;
+    height: 105px;
+    top: 45px;
+    left: 43px;
+}
+
+.forgot h1 {
+    position: absolute;
+    width: 390px;
+    height: 48px;
+    top: 16px;
+    left: 83px;
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    color: #000000;
+    font-size: 35px;
+    letter-spacing: 0;
+    line-height: 39px;
+}
+
+.forgot .overlap-group img {
+    position: absolute;
+    width: 405px;
+    height: 5px;
+    top: 65px;
+    left: 64.5px;
+}
+
+.forgot .card-text {
+    position: absolute;
+    width: 280px;
+    height: 28px;
+    top: 84px;
+    left: 126.5px;
+    font-family: "Mulish", sans-serif;
+    font-weight: 600;
+    color: #000000;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 39px;
+    white-space: nowrap;
+}
+
+.forgot .card-body {
+    position: absolute;
+    width: 399px;
+    height: 387px;
+    top: 2;
+    left: 31px;
+}
+
+.forgot .alert {
+    position: absolute;
+    width: 405px;
+    height: 38px;
+    top: 165px;
+    left: 76.5px;
+    margin-bottom: 1rem;
+    padding: .75rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    font-family: "Mulish", sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+.forgot .alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.forgot .alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+/* Style form elements */
+.forgot .form-group1 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+/* Style untuk form input */
+.forgot .form-group1 input {
+    position: absolute;
+    width: 405px;
+    height: 38px;
+    top: 215px;
+    left: 76.5px;
+    font-size: 15px;
+    line-height: 1.5;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #494a4a;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.forgot .invalid-feedback {
+    color: #dc3545;
+}
+
+/* Style for form group 2 */
+.forgot .form-group2 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.forgot .col-md-6 button{
+    position: absolute;
+    width: 405px;
+    height: 38px;
+    top: 275px;
+    left: 76.5px;
+    background-color: #bf1010;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Style for the forgot button */
+.forgot .btn-primary {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0;
+    white-space: nowrap;
+}
+
+/* Hover effect for forgot button */
+.forgot .btn-primary:hover {
+    background-color: #bf1010;
+}
+
+/* ==========================
+10. Reset Password
+============================*/
+
+/* Center the reset password form */
+.reset .frame-1 {
+    position: absolute;
+    width: 649px;
+    height: 510px;
+    top: 22px;
+    left: 0;
+    right: 23.5px;
+    bottom: 0;
+    margin: auto;
+    background-color: #000000;
+    border-radius: 21px;
+}
+  
+.reset .frame-2 {
+    position: absolute;
+    width: 649px;
+    height: 510px;
+    top: 0;
+    left: 23.5px;
+    right: 0;
+    bottom: 45.5px;
+    margin: auto;
+    background-color: #bf1010;
+    border-radius: 21px;
+}
+
+.reset .card {
+    position: absolute;
+    width: 622px;
+    height: 485px;
+    top: 25px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid;
+    border-color: #727272;
+    box-shadow: 0px 4px 4px #00000040;
+}
+
+.reset .overlap-group {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 312px;
+    height: 105px;
+    top: 45px;
+    left: 43px;
+}
+
+.reset h1 {
+    position: absolute;
+    width: 390px;
+    height: 48px;
+    top: 16px;
+    left: 72px;
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    color: #000000;
+    font-size: 35px;
+    letter-spacing: 0;
+    line-height: 39px;
+    text-align: center;
+}
+
+.reset .overlap-group img {
+    position: absolute;
+    width: 405px;
+    height: 5px;
+    top: 65px;
+    left: 64.5px;
+}
+
+.reset .card-text {
+    position: absolute;
+    width: 410px;
+    height: 80px;
+    top: 84px;
+    left: 62px;
+    font-family: "Mulish", sans-serif;
+    font-weight: 600;
+    color: #000000;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 30px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.reset .card-body {
+    position: absolute;
+    width: 399px;
+    height: 387px;
+    top: 2;
+    left: 31px;
+}
+
+.reset .alert {
+    position: absolute;
+    width: 405px;
+    height: 38px;
+    top: 165px;
+    left: 76.5px;
+    margin-bottom: 1rem;
+    padding: .75rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    font-family: "Mulish", sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+.reset .alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.reset .alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+/* Style form elements */
+.reset .form-group1 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+/* Style untuk form input */
+.reset .form-group1 input {
+    position: absolute;
+    width: 405px;
+    height: 38px;
+    top: 215px;
+    left: 76.5px;
+    font-size: 15px;
+    line-height: 1.5;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #494a4a;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.reset .form-group2 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+/* Style untuk form input */
+.reset .form-group2 input {
+    position: absolute;
+    width: 405px;
+    height: 38px;
+    top: 270px;
+    left: 76.5px;
+    font-size: 15px;
+    line-height: 1.5;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #494a4a;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.reset .form-group2 i {
+    position: absolute;
+    width: 15px;
+    height: 24px;
+    top: 277px;
+    left: 455px;
+    color: #494a4a;
+    padding: 5px 0;
+    transition: border-bottom-color 0.3s;
+}
+
+.reset .form-group3 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+/* Style untuk form input */
+.reset .form-group3 input {
+    position: absolute;
+    width: 405px;
+    height: 38px;
+    top: 325px;
+    left: 76.5px;
+    font-size: 15px;
+    line-height: 1.5;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #494a4a;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.reset .form-group3 i {
+    position: absolute;
+    width: 15px;
+    height: 24px;
+    top: 332px;
+    left: 455px;
+    color: #494a4a;
+    padding: 5px 0;
+    transition: border-bottom-color 0.3s;
+}
+
+.reset .invalid-feedback {
+    color: #dc3545;
+}
+
+/* Style for form group 2 */
+.reset .form-group4 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.reset .col-md-6 button{
+    position: absolute;
+    width: 405px;
+    height: 38px;
+    top: 380px;
+    left: 76.5px;
+    background-color: #bf1010;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Style for the forgot button */
+.reset .btn-primary {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0;
+    white-space: nowrap;
+}
+
+/* Hover effect for forgot button */
+.reset .btn-primary:hover {
+    background-color: #bf1010;
+}
+
+/* ==========================
+11. Verifikasi Kode
+============================*/
+
+/* Center the Verifikasi Kode form */
+.verify .frame-1 {
+    position: absolute;
+    width: 649px;
+    height: 385px;
+    top: 22px;
+    left: 0;
+    right: 23.5px;
+    bottom: 0;
+    margin: auto;
+    background-color: #000000;
+    border-radius: 21px;
+}
+  
+.verify .frame-2 {
+    position: absolute;
+    width: 649px;
+    height: 385px;
+    top: 0;
+    left: 23.5px;
+    right: 0;
+    bottom: 45.5px;
+    margin: auto;
+    background-color: #bf1010;
+    border-radius: 21px;
+}
+
+.verify .card {
+    position: absolute;
+    width: 622px;
+    height: 360px;
+    top: 25px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid;
+    border-color: #727272;
+    box-shadow: 0px 4px 4px #00000040;
+}
+
+.verify .overlap-group {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 312px;
+    height: 105px;
+    top: 45px;
+    left: 43px;
+}
+
+.verify .card-hover {
+    position: absolute;
+    width: 390px;
+    height: 48px;
+    top: 16px;
+    left: 83px;
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    color: #000000;
+    font-size: 35px;
+    letter-spacing: 0;
+    line-height: 39px;
+}
+
+.verify .overlap-group img {
+    position: absolute;
+    width: 405px;
+    height: 5px;
+    top: 65px;
+    left: 64.5px;
+}
+
+.verify .card-text {
+    position: absolute;
+    width: 280px;
+    height: 28px;
+    top: 84px;
+    left: 66.5px;
+    font-family: "Mulish", sans-serif;
+    font-weight: 600;
+    color: #000000;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 39px;
+    white-space: nowrap;
+}
+
+.verify .card-body {
+    position: absolute;
+    width: 399px;
+    height: 387px;
+    top: 2;
+    left: 31px;
+}
+
+/* Style form elements */
+.verify .form-group1 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+/* Style untuk form input */
+.verify .form-group1 input {
+    position: absolute;
+    width: 405px;
+    height: 38px;
+    top: 185px;
+    left: 76.5px;
+    font-size: 15px;
+    line-height: 1.5;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #494a4a;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.verify .invalid-feedback {
+    color: #dc3545;
+}
+
+/* Style for form group 2 */
+.verify .form-group2 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.verify .col-md-6 button{
+    position: absolute;
+    width: 405px;
+    height: 38px;
+    top: 250px;
+    left: 76.5px;
+    background-color: #bf1010;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Style for the login button */
+.verify .btn-primary {
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0;
+    white-space: nowrap;
+}
+
+/* Hover effect for login button */
+.verify .btn-primary:hover {
+    background-color: #bf1010;
+}
+
+/* ==========================
+12. Keranjang
+============================*/
+
+/* Styling for the cart section */
+.cart {
+    margin-top: 2px;
+    padding: 20px;
+    background-color: #FFFFFF;
+}
+
+.cart .card {
+    background-color: #FFFFFF;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+/* Heading styling */
+.cart .card-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cart .card-heading h2 {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    color: #000;
+    font-size: 40px;
+    margin: 0;
+}
+
+/* Table styling */
+.cart .table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 0 auto 20px auto; /* Center the table and add bottom margin */
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5); /* Box shadow */
+}
+
+.cart .table th, .table td {
+    border: 1px solid #dee2e6;
+    padding: 12px;
+    text-align: center; /* Center text horizontally */
+    vertical-align: middle; /* Center text vertically */
+}
+
+.cart .table th {
+    background-color: #C6C6C6;
+}
+
+.cart .table img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.cart .quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart .quantity-control form {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.cart .quantity-control .quantity {
+    margin: 0 10px;
+    font-size: 16px; /* Sesuaikan ukuran font sesuai kebutuhan */
+}
+
+/* Button group styling */
+.cart .button-group-up {
+    display: flex;
+    justify-content: center;
+}
+
+.cart .button-group-up .btn {
+    margin: 0 5px; /* Decrease spacing between buttons */
+    border-radius: 99px;
+    padding: 6px 30px; /* Decrease padding for smaller buttons */
+    font-size: 15px; /* Decrease font size */
+}
+
+/* ==========================
+13. Checkout
+============================*/
+
+.checkout {
+    margin-top: 2px;
+    padding: 70px;
+    background-color: #FFFFFF;
+}
+
+.checkout .card {
+    max-width: 550px;
+    padding: 30px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.checkout h2 {
+    margin-top: 20px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    color: #000000;
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 22px;
+}
+
+.checkout form {
+    margin-top: 20px;
+}
+
+.checkout .form-group {
+    margin-bottom: 20px;
+}
+
+.checkout label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    color: #727272;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 22px;
+}
+
+.checkout input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    color: #000000;
+    letter-spacing: 0;
+    line-height: 22px;
+}
+
+/* Select box styles */
+.checkout .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 15px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    color: #000000;
+    letter-spacing: 0;
+    appearance: none;
+    background-color: #fff; 
+    transition: border-color 0.2s;
+}
+
+.checkout .form-group select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.checkout .form-group select {
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns%3D%27http://www.w3.org/2000/svg%27 viewBox%3D%270 0 4 5%27%3E%3Cpath fill%3D%27%23444%27 d%3D%27M2 0L0 2h4z%27/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 0.65rem auto;
+    padding-right: 2rem;
+}
+
+.checkout input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    color: #000000;
+    letter-spacing: 0;
+    line-height: 22px;
+}
+
+.checkout input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    color: #000000;
+    letter-spacing: 0;
+    line-height: 22px;
+}
+
+.checkout input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    color: #000000;
+    letter-spacing: 0;
+    line-height: 22px;
+}
+
+.checkout textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    color: #000000;
+    letter-spacing: 0;
+    line-height: 22px;
+}
+
+.checkout .card-body {
+    padding: 30px;
+}
+.checkout .list-group {
+    margin-top: 10px;
+}
+
+.checkout .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border: none;
+}
+
+.checkout .list-group-item:not(:last-child) {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.checkout .list-group-item h6 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.checkout .list-group-item small {
+    display: block;
+    font-size: 16px;
+    color: #6c757d;
+}
+
+.checkout .list-group-item span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.checkout .text-muted {
+    color: #6c757d !important;
+}
+
+.checkout .text-right {
+    text-align: right;
+}
+
+.checkout .total {
+    font-weight: bold;
+}
+  
+.checkout .btn-primary {
+    background-color: #0085d1;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 99px;
+    cursor: pointer;
+}
+  
+.checkout .btn-primary:hover {
+    background-color: #23527c;
+}
+
+/* ==========================
+14. Profile
+============================*/
+
+/* Styles for Profile Section */
+.profile {
+    display: grid;
+    place-items: center;
+    height: 550px;
+    background-color: #FFFFFF;
+}
+
+.profile .card {
+    max-width: 700px;
+    background-color: #FFFFFF;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 50px;
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5); /* Box shadow */
+}
+
+/* Heading styling */
+.profile .card-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile .card-heading h2 {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    color: #000;
+    font-size: 40px;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.profile .alert {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.profile .alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.profile .alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+.profile p {
+    display: block;
+    width: 100%;
+    padding: 4px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #000000;
+    background-color: #fff;
+}
+
+.profile .btn-primary {
+    display: inline-block;
+    background-color: #0086D1;
+    color: #fff;
+    margin-top: 20px;
+    padding: 8px; /* Mengubah ukuran tombol dengan menyesuaikan properti padding */
+    text-decoration: none;
+    border-radius: 99px;
+    transition: background-color 0.3s;
+}
+
+
+.profile .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* ==========================
+15. Edit Profile
+============================*/
+
+/* Styles for Edit Profile Section */
+.edit-profile {
+    display: grid;
+    place-items: center;
+    height: 650px;
+    background-color: #FFFFFF;
+    text-align: center;
+}
+
+.edit-profile .card {
+    width: 550px;
+    background-color: #FFFFFF;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 50px;
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5); /* Box shadow */
+}
+
+.edit-profile .card-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.edit-profile .card-heading h2 {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    color: #000;
+    font-size: 40px;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.edit-profile .alert {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.edit-profile .alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.edit-profile .alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+.edit-profile .form-group {
+    margin-bottom: 20px;
+    font-family: "Inter", sans-serif;
+    text-align: left;
+}
+
+.edit-profile label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.edit-profile .form-control {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 20px; /* Menentukan radius yang cukup besar */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.edit-profile .form-control:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.edit-profile .btn {
+    display: inline-block;
+    background-color: #0086D1;
+    color: #fff;
+    margin-top: 20px;
+    padding: 8px 40px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 99px;
+    transition: background-color 0.3s;
+    margin: 0 auto; /* Untuk menengahkan tombol horizontal di dalam elemen .edit-profile */
+}
+
+.edit-profile .btn:hover {
+    background-color: #0056b3;
+}
+
+/* ==========================
+16. Search Product
+============================*/
+
+.search-results {
+    position: relative;
+    width: 100%; /* Adjust width to be responsive */
+    max-width: 1349px; /* Keep the max width */
+    min-height: 100%; /* Adjust to fit content */
+    background-color: #F2ECEC;
+    margin-top: 2px;
+}
+
+.search-results .card-heading {
+    position: relative; /* Changed to relative */
+    width: 100%;
+    max-width: 1349px;
+    height: 50px;
+    background-color: #ffffff;
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.search-results h2 {
+    margin: 0 110px; /* Remove side margins */
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    color: #000000;
+    font-size: 20px;
+    text-align: center; /* Center align text */
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+}
+
+/* Styling for the row */
+.search-results .row {
+    width: 1360px;
+    margin-top: 2px; /* Remove default margin */
+    background-color: #FFFFFF;
+}
+
+/* Styling for individual columns */
+.search-results .col-md-4 {
+    position: relative;
+    width: 425px; /* Adjust width to make sure 3 columns fit in one row */
+    margin: 1%; /* Add margin to create space between columns */
+    padding: 15px;
+    box-sizing: border-box; /* Ensure padding and margin don't affect width */
+}
+
+.search-results .col-md-4:hover {
+    transform: scale(1.05); /* Mengubah skala elemen ketika dihover */
+    transition: transform 0.3s ease; /* Animasi transisi untuk efek hover */
+}
+
+/* Styling for the card */
+.search-results .card {
+    position: relative; /* Changed to relative */
+    width: 400px;
+    height: 195px;
+    border: 1px solid #ddd; /* Add a border for better visibility */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden;
+    background-color: #fff; /* Background color for card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add some shadow for better look */
+    padding: 15px; /* Add padding for card content */
+}
+
+/* Styling for the card image */
+.search-results img {
+    width: 100px; /* Set fixed width for image */
+    height: 100px; /* Set fixed height for image */
+    border-radius: 9px;
+    background-position: 50% 50%;
+    margin-top: -140px;
+    margin-left: 245px;
+}
+
+/* Styling for the card body */
+.search-results .card-body {
+    width: 260px;
+    height: 117px;
+    text-align: left; 
+}
+
+/* Styling for the card title */
+.search-results .card-title {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    color: #000000;
+    font-size: 14px;
+    margin-bottom: 10px; /* Margin for spacing */
+}
+
+/* Styling for the card text */
+.search-results .card-text {
+    height: 40px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    color: #727272;
+    font-size: 12px;
+    margin-bottom: 10px; /* Margin for spacing */
+}
+
+/* Styling for the card number (price) */
+.search-results .card-number {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    color: #000000;
+    font-size: 12px;
+    margin-bottom: 10px; /* Margin for spacing */
+}
+
+/* Styling for the form button */
+.search-results .btn-primary {
+    padding: 5px 25px; /* Padding for the button */
+    background-color: #eaffea;
+    border-radius: 99px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    color: #0085d1;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    display: block;
+    margin-top: -15px;
+    margin-left: 245px;
+}
+
+/* ==========================
+17. Payment
+============================*/
+
+/* General layout styles */
+.checkout-payment {
+    padding: 80px 0; /* Adjust padding as needed */
+    background-color: #f8f9fa; /* Light background color */
+    text-align: center;
+}
+
+.checkout-payment .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff; /* White background for container */
+}
+
+.checkout-payment h2 {
+    font-family: "Inter", sans-serif;
+    font-size: 2.5rem; /* Adjust heading size */
+    margin-bottom: 20px;
+}
+
+.checkout-payment p {
+    font-family: "Inter", sans-serif;
+    font-size: 1.2rem; /* Adjust paragraph size */
+    color: #6c757d; /* Grayish text color */
+    margin-bottom: 30px;
+}
+
+/* ==========================
+18. Payment Success
+============================*/
+
+/* General layout styles */
+.checkout-success {
+    padding: 80px 0; /* Adjust padding as needed */
+    background-color: #f8f9fa; /* Light background color */
+    text-align: center;
+}
+
+.checkout-success .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff; /* White background for container */
+}
+
+.checkout-success h2 {
+    font-family: "Inter", sans-serif;
+    font-size: 2.5rem; /* Adjust heading size */
+    margin-bottom: 20px;
+}
+
+.checkout-success p {
+    font-family: "Inter", sans-serif;
+    font-size: 1.2rem; /* Adjust paragraph size */
+    color: #6c757d; /* Grayish text color */
+    margin-bottom: 30px;
+}
+
+.checkout-success a.btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #007bff; /* Bootstrap's primary color */
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-success a.btn:hover {
+    background-color: #0056b3; /* Darker shade of primary color on hover */
+}
+
+/* ==========================
+19. History Orders
+============================*/
+
+/* Style untuk bagian card */
+.history {
+    padding: 20px;
+    margin-top: 2px;
+    background-color: #FFFFFF; /* Light background color */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.history .card {
+    width: 70%;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.history .card-heading {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.history .card-heading h1 {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.history .card-body {
+    font-family: "Inter", sans-serif;
+    padding: 20px;
+}
+
+.history tr {
+    padding: 12px;
+    text-align: center;
+}
+
+.history hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
